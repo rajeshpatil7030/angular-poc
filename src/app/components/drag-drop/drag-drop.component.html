@@ -1,0 +1,31 @@
+<div class="container marginTop40px">
+    <div class="row">
+        <div class="col-sm-8 col-md-8 col-lg-8 dragContainer left-container">
+                <div cdkDropList id="componentList" [cdkDropListData]="components"
+                [cdkDropListConnectedTo]="['defaultComponentList']" (cdkDropListDropped)="dropIt($event)">
+                <div class="comp drag-box comp-render"cdkDragBoundary=".comp-render"  style="cursor: all-scroll" *ngFor="let component of components; index as i"
+                    cdkDrag>
+                    <ng-template #test class=""></ng-template>
+                </div>
+                <div class="empty-render" *ngIf="components.length == 0">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4 dragContainer">
+            <h5 class="headerList">Drag items from the list</h5>
+            <hr>
+                <aside cdkDropList id="defaultComponentList" [cdkDropListData]="defaultComponents"
+                [cdkDropListConnectedTo]="['componentList']">
+                <div class="aside-container">
+                    <div class="auto-complete-content-area p-10">
+                        <div *ngFor="let comp of defaultComponents">
+                            <h6 class="drag-list"  cdkDrag>{{comp.displayName}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+               
+            </div>
+    </div>
+</div>
+

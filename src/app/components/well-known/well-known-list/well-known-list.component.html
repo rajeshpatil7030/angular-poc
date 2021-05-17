@@ -1,0 +1,26 @@
+<div class="container-fluid marginTop40px">
+                <app-well (onFormGroupChange)="onFormGroupChangeEvent($event)"></app-well>
+
+                    <div class="wellAddContainer col-md-8">
+                            <table class="table table-striped">
+                                    <thead class="thead-dark">
+                                      <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Source Key</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr class="pointer" *ngFor="let well of wellList">
+                                    
+                                        <td> {{well.name}}</td>
+                                        <td [ngClass]=" well.type == 'esp' ?  'bgColorPink' : well.type == 'rls' ? 'bgColorGreen' : '' "> <span [style.color]="well.type == 'rls' ? 'pink':'black'">{{well.type}} </span></td>
+                                        <td> <a href="javascript:void(0)" class="pointer" (click)="updateWell(well)"> {{well.sourceKey}} </a></td>
+                        
+                                      </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+        
+    </div>

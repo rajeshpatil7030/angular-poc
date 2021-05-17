@@ -1,0 +1,32 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="wellAddContainer col-md-8">
+
+            <h5> Add Well</h5>
+
+            <form class="well-form" [formGroup]="addWellFrom" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+
+                    <label class="text-uppercasse">Name</label>
+                    <input type="text" class="form-control" formControlName="name"/>
+                </div>
+                <div class="form-group">
+
+                        <label class="text-uppercasse">Type</label>
+                        <input type="text" class="form-control" formControlName="type"/>
+                    </div>
+
+                    <div class="form-group">
+
+                            <label class="text-uppercasse">Source Key</label>
+                            <input type="text" class="form-control" formControlName="sourceKey" disabled/>
+                        </div>
+
+                <button [disabled]="!addWellFrom.valid" type="submit" class="btn btn-add float-left">Submit</button>
+            </form>
+
+        </div>
+    </div>
+
+</div>
