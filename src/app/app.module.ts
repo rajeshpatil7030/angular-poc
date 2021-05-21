@@ -21,7 +21,7 @@ import { MaskComponent } from './components/drag-drop/inputcomponents/mask/mask.
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { HeaderControlComponent } from './components/drag-drop/inputcomponents/header-control/header-control.component';
 import { FooterControlComponent } from './components/drag-drop/inputcomponents/footer-control/footer-control.component';
-
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -50,7 +50,7 @@ import { FooterControlComponent } from './components/drag-drop/inputcomponents/f
     ReactiveFormsModule,
     DragDropModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
